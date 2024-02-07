@@ -49,12 +49,26 @@ public class ClientService
         var clients = _clientRepo.GetAll();
         return clients;
     }
-
-    public ClientsEntity UpdateCategory(ClientsEntity clientEntity)
+    public ClientsEntity UpdateClient(ClientsEntity clientEntity)
     {
-        var UpdateClientEntity = _clientRepo.Update(x => x.Id == clientEntity.Id, clientEntity);
-        return UpdateClientEntity;
+        if (clientEntity == null)
+        {
+            throw new ArgumentNullException(nameof(clientEntity), "The category entity cannot be null.");
+        }
+
+        // Call the Update method of the generic repository with the category entity
+
+        var updatedClient = _clientRepo.Update(clientEntity);
+
+        return updatedClient;
     }
+
+
+    //public ClientsEntity UpdateCategory(ClientsEntity clientEntity)
+    //{
+    //    var UpdateClientEntity = _clientRepo.Update(x => x.Id == clientEntity.Id, clientEntity);
+    //    return UpdateClientEntity;
+    //}
 
     public void DeleteClient(int id)
     {

@@ -43,11 +43,25 @@ public class ProductServices
         return products;
     }
 
-    public ProductsEntity UpdateProductsEntity (ProductsEntity productEntity)
+    public ProductsEntity UpdateProduct(ProductsEntity productEntity)
     {
-        var UpdateProductEntity = _productRepo.Update(x => x.Id == productEntity.Id, productEntity);
-        return UpdateProductEntity;
+        if (productEntity == null)
+        {
+            throw new ArgumentNullException(nameof(productEntity), "The category entity cannot be null.");
+        }
+
+        // Call the Update method of the generic repository with the category entity
+
+        var updateProduct = _productRepo.Update(productEntity);
+
+        return updateProduct;
     }
+
+    //public ProductsEntity UpdateProductsEntity (ProductsEntity productEntity)
+    //{
+    //    var UpdateProductEntity = _productRepo.Update(x => x.Id == productEntity.Id, productEntity);
+    //    return UpdateProductEntity;
+    //}
 
     public void DeleteProduct(int id)
     {

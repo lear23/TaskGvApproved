@@ -49,11 +49,25 @@ public class DirectionService
         return directions;
     }
 
-    public DirectionsEntity UpdateDirectiony(DirectionsEntity directionEntity)
+    public DirectionsEntity UpdateDirection(DirectionsEntity directionEntity)
     {
-        var UpdateDirectionEntity = _directionRepo.Update(x => x.Id == directionEntity.Id, directionEntity);
-        return UpdateDirectionEntity;
+        if (directionEntity == null)
+        {
+            throw new ArgumentNullException(nameof(directionEntity), "The category entity cannot be null.");
+        }
+
+        // Call the Update method of the generic repository with the category entity
+
+        var updateDirection = _directionRepo.Update(directionEntity);
+
+        return updateDirection;
     }
+
+    //public DirectionsEntity UpdateDirectiony(DirectionsEntity directionEntity)
+    //{
+    //    var UpdateDirectionEntity = _directionRepo.Update(x => x.Id == directionEntity.Id, directionEntity);
+    //    return UpdateDirectionEntity;
+    //}
 
     public void DeleteDirection(int id)
     {

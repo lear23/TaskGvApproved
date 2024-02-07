@@ -1,22 +1,22 @@
 ﻿CREATE TABLE CategoriesEntity (
-  Id INT PRIMARY KEY,
+  Id INT PRIMARY KEY IDENTITY,
   CategoryName NVARCHAR(MAX)
 );
 
 CREATE TABLE ReadersEntity (
-  Id INT PRIMARY KEY,
+  Id INT PRIMARY KEY IDENTITY,
   ReaderName NVARCHAR(MAX)
 );
 
 CREATE TABLE DirectionsEntity (
-  Id INT PRIMARY KEY,
+  Id INT PRIMARY KEY IDENTITY,
   StreetName NVARCHAR(MAX),
   PostalCode NVARCHAR(MAX),
   City NVARCHAR(MAX)
 );
 
 CREATE TABLE ClientsEntity (
-  Id INT PRIMARY KEY,
+  Id INT PRIMARY KEY IDENTITY,
   FirstName NVARCHAR(MAX),
   LastName NVARCHAR(MAX),
   ReaderId INT,
@@ -26,7 +26,7 @@ CREATE TABLE ClientsEntity (
 );
 
 CREATE TABLE ProductsEntity (
-  Id INT PRIMARY KEY,
+  Id INT PRIMARY KEY IDENTITY,
   ModelName NVARCHAR(MAX),
   Color NVARCHAR(MAX),
   CategoryId INT,

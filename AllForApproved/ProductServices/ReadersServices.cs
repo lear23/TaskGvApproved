@@ -46,9 +46,23 @@ public class ReadersServices
 
     public ReadersEntity UpdateReader(ReadersEntity readerEntity)
     {
-        var UpdateReaderEntity = _readersRepo.Update(x => x.Id == readerEntity.Id, readerEntity);
-        return UpdateReaderEntity;
+        if (readerEntity == null)
+        {
+            throw new ArgumentNullException(nameof(readerEntity), "The category entity cannot be null.");
+        }
+
+        // Call the Update method of the generic repository with the category entity
+
+        var updateReader = _readersRepo.Update(readerEntity);
+
+        return updateReader;
     }
+
+    //public ReadersEntity UpdateReader(ReadersEntity readerEntity)
+    //{
+    //    var UpdateReaderEntity = _readersRepo.Update(x => x.Id == readerEntity.Id, readerEntity);
+    //    return UpdateReaderEntity;
+    //}
 
     public void DeleteReader(int id)
     {

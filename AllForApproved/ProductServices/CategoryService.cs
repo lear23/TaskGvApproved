@@ -42,13 +42,27 @@ public class CategoryService
     {
         var categories = _categoryRepo.GetAll();
         return categories;
-    } 
-
+    }
     public CategoriesEntity UpdateCategory(CategoriesEntity categoryEntity)
     {
-        var UpdateCategoryEntity = _categoryRepo.Update(x => x.Id == categoryEntity.Id, categoryEntity);
-        return UpdateCategoryEntity;
+        if (categoryEntity == null)
+        {
+            throw new ArgumentNullException(nameof(categoryEntity), "The category entity cannot be null.");
+        }
+
+        // Call the Update method of the generic repository with the category entity
+
+        var updatedCategory = _categoryRepo.Update(categoryEntity);
+
+        return updatedCategory;
     }
+
+
+    //public CategoriesEntity UpdateCategory(CategoriesEntity categoryEntity)
+    //{
+    //    var UpdateCategoryEntity = _categoryRepo.Update(x => x.Id == categoryEntity.Id, categoryEntity);
+    //    return UpdateCategoryEntity;
+    //}
 
     public void DeleteCategory(int id)
     {
