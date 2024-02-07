@@ -16,7 +16,7 @@ using System;
 
 var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
 {
-    services.AddDbContext<DataContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\SkolaUppgifter\AllForApproved\AllForApproved\Data\DataBaseCF.mdf;Integrated Security=True;Connect Timeout=30"));
+    services.AddDbContext<DataContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lears\source\repos\lear23\TaskGvApproved\AllForApproved\Data\DataBaseCF.mdf;Integrated Security=True"));
     services.AddDbContext<ProductCatalog>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lears\source\repos\lear23\TaskGvApproved\AllForApproved\Data\ProductDataBase.mdf;Integrated Security=True"));
    
     services.AddScoped<AddressRepo>();
@@ -47,17 +47,17 @@ var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
 
 
 
-    //services.AddSingleton<MenuService>();
-    services.AddSingleton<ProductCatalogService>();
-  
+    services.AddSingleton<MenuService>();
+    //services.AddSingleton<ProductCatalogService>();
+
 
 
 }).Build();
 
-//var menuService = builder.Services.GetRequiredService<MenuService>();
-//menuService.CreateCustomer_UI();
+var menuService = builder.Services.GetRequiredService<MenuService>();
+menuService.CreateCustomer_UI();
 
-var productService = builder.Services.GetRequiredService<ProductCatalogService>();
-productService.CreateProduct_UI();
+//var productService = builder.Services.GetRequiredService<ProductCatalogService>();
+//productService.CreateProduct_UI();
 
 

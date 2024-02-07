@@ -1,6 +1,7 @@
 ﻿
 
 using AllForApproved.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace AllForApproved.Repositories;
@@ -35,14 +36,18 @@ public class GenericRepo<TEntity> where TEntity : class
         return entity!;
 
     }
-
+  
     public virtual TEntity Update(Expression<Func<TEntity, bool>> expression, TEntity entity)
     {
-        var UpdateEntity = _context.Set<TEntity>().FirstOrDefault(expression);
-        _context.Entry(UpdateEntity!).CurrentValues.SetValues(entity);
-        _context.SaveChanges();
-        return UpdateEntity!;
+        var entityToUpdate = _context.Set<TEntity>().FirstOrDefault(expression);
+        if (entityToUpdate != null)
+        {
+            _context.Entry(entityToUpdate).CurrentValues.SetValues(entity);
+            _context.SaveChanges(); 
+        }
+        return entityToUpdate!;
     }
+
 
     public virtual void Delete(Expression<Func<TEntity, bool>> expression)
     {

@@ -50,11 +50,6 @@ public class ContactService
         return contactEntity;
     }
 
-    //public ContactEntity GetContactId(int id)
-    //{
-    //    var contactEntity = _contactRepo.Get(x => x.Id == id);
-    //    return contactEntity;
-    //}
 
     public IEnumerable<ContactEntity> GetAllCountry()
     {

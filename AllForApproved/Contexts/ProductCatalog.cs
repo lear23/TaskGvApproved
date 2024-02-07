@@ -28,14 +28,14 @@ namespace AllForApproved.Contexts
             {
                 entity.HasKey(e => e.Id).HasName("PK__Categori__3214EC07B76D58F9");
                 entity.ToTable("CategoriesEntity");
-                entity.Property(e => e.Id).ValueGeneratedOnAdd(); // Cambio aquí
+                entity.Property(e => e.Id).ValueGeneratedOnAdd(); 
             });
 
             modelBuilder.Entity<ClientsEntity>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK__ClientsE__3214EC0794C505EB");
                 entity.ToTable("ClientsEntity");
-                entity.Property(e => e.Id).ValueGeneratedOnAdd(); // Cambio aquí
+                entity.Property(e => e.Id).ValueGeneratedOnAdd(); 
 
                 entity.HasOne(d => d.Direction).WithMany(p => p.ClientsEntities)
                     .HasForeignKey(d => d.DirectionId)
@@ -50,14 +50,14 @@ namespace AllForApproved.Contexts
             {
                 entity.HasKey(e => e.Id).HasName("PK__Directio__3214EC075A034F8D");
                 entity.ToTable("DirectionsEntity");
-                entity.Property(e => e.Id).ValueGeneratedOnAdd(); // Cambio aquí
+                entity.Property(e => e.Id).ValueGeneratedOnAdd(); 
             });
 
             modelBuilder.Entity<ProductsEntity>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK__Products__3214EC079BB7ABA7");
                 entity.ToTable("ProductsEntity");
-                entity.Property(e => e.Id).ValueGeneratedOnAdd(); // Cambio aquí
+                entity.Property(e => e.Id).ValueGeneratedOnAdd(); 
 
                 entity.HasOne(d => d.Category).WithMany(p => p.ProductsEntities)
                     .HasForeignKey(d => d.CategoryId)
@@ -68,7 +68,7 @@ namespace AllForApproved.Contexts
             {
                 entity.HasKey(e => e.Id).HasName("PK__ReadersE__3214EC070667AA4B");
                 entity.ToTable("ReadersEntity");
-                entity.Property(e => e.Id).ValueGeneratedOnAdd(); // Cambio aquí
+                entity.Property(e => e.Id).ValueGeneratedOnAdd(); 
             });
 
             OnModelCreatingPartial(modelBuilder);

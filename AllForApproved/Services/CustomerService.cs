@@ -37,8 +37,7 @@ public class CustomerService
             
         };
         customerEntity = _customerRepo.Create(customerEntity);
-        return customerEntity;
-       
+        return customerEntity;     
 
 
     }
