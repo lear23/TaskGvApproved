@@ -65,6 +65,30 @@ public class ProductCatalogService
             Console.WriteLine("Error occurred while creating User or Product");
             Console.ReadKey();
         }
-    }    
+    }
+
+    public void GetProduct_UI()
+    {
+        Console.Clear();
+        var products = _products.GetAllProducts();
+        foreach (var product in products)
+        {
+
+            if (product != null)
+            {
+                var modelName = product.ModelName ?? "N/A";
+                var color = product.Color ?? "N/A";
+                var categoryName = product.Category?.CategoryName ?? "N/A";
+
+                Console.WriteLine($"{modelName} - {color} - {categoryName}");
+            }
+            else
+            {
+                Console.WriteLine("Produkten är null");
+            }
+        }
+
+        Console.ReadKey();
+    }
 
 }

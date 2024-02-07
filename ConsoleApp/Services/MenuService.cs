@@ -58,6 +58,27 @@ public class MenuService
         }
 
     }
+    public void GetCustomer_UI()
+    {
+        Console.Clear();
+        var customers = _customerService.GetAllCustomer();
+        foreach (var customer in customers)
+        {
+            var firstName = customer.FirstName ?? "N/A";
+            var lastName = customer.LastName ?? "N/A";
+            var streetAddress = customer.Address?.StreetAddress ?? "N/A";
+            var postalCode = customer.Address?.PostalCode ?? "N/A";
+            var email = customer.Contact?.Email ?? "N/A";
+            var phoneNumber = customer.Contact?.PhoneNumber ?? "N/A";
+            var userName = customer.Contact?.User?.UserName ?? "N/A";
+            var city = customer.Country?.City ?? "N/A";
+            var country = customer.Country?.Country ?? "N/A";
+
+            Console.WriteLine($"{firstName} - {lastName} - {streetAddress} - {postalCode} - {email} - {phoneNumber} - {userName} - {city} - {country}");
+        }
+
+        Console.ReadKey();
+    }
 
 
 
