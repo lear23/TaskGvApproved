@@ -61,9 +61,23 @@ public class CustomerService
     }
 
 
-    public void DeleteCustomer(int id)
+    //public void DeleteCustomer(int id)
+    //{
+    //    _customerRepo.Delete(x => x.Id == id);
+    //}
+    public bool? DeleteCustomer(int id)
     {
-        _customerRepo.Delete(x => x.Id == id);
+        try
+        {
+            _customerRepo.Delete(x => x.Id == id);
+            return true;
+        }
+        catch (Exception ex)
+        {
+
+            Console.WriteLine($"An error occurred while deleting customer: {ex.Message}");
+            return false;
+        }
     }
 
 }

@@ -80,6 +80,51 @@ public class MenuService
         Console.ReadKey();
     }
 
+    //public void DeleteCustomer()
+    //{
+    //    Console.Clear();
+    //    Console.WriteLine("----DELETE CUSTOMER----");
+    //    Console.Write("Enter Customer ID to delete: ");
+    //    int customerId;
+    //    if (int.TryParse(Console.ReadLine(), out customerId))
+    //    {
+    //        _customerService.DeleteCustomer(customerId);
+    //        Console.WriteLine("Customer deletion request processed.");
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine("Invalid input. Please enter a valid customer ID.");
+    //    }
+
+    //    Console.ReadKey();
+    //}
+    public bool? DeleteCustomer()
+    {
+        Console.Clear();
+        Console.WriteLine("----DELETE CUSTOMER----");
+        Console.Write("Enter Customer ID to delete: ");
+        int customerId;
+        if (int.TryParse(Console.ReadLine(), out customerId))
+        {
+            try
+            {
+                _customerService.DeleteCustomer(customerId);
+                Console.WriteLine("Customer deleted successfully.");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while deleting customer: {ex.Message}");
+                return false;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid customer ID.");
+            return null;
+        }
+    }
+
 
 
 }

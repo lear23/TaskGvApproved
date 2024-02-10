@@ -91,4 +91,27 @@ public class ProductCatalogService
         Console.ReadKey();
     }
 
+
+
+
+    public void DeleteProductById_UI()
+    {
+        Console.Clear();
+        Console.WriteLine("----DELETE PRODUCT----");
+        Console.Write("Enter Product ID to delete: ");
+        int productId;
+        if (int.TryParse(Console.ReadLine(), out productId))
+        {
+            _products.DeleteProduct(productId);
+            Console.WriteLine("Product deletion request processed.");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid product ID.");
+        }
+
+        Console.ReadKey();
+    }
+
+
 }
