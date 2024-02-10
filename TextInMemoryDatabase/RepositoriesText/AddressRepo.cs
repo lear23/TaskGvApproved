@@ -21,7 +21,7 @@ public class AddressRepo
         return entity;
     }
 
-    public IEnumerable<AddressEntity> Get(AddressEntity entity)
+    public IEnumerable<AddressEntity> Get()
     {
         return _dataContexts.Address.ToList();
     }

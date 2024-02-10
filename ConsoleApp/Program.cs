@@ -57,7 +57,7 @@ var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
 var menuService = builder.Services.GetRequiredService<MenuService>();
 menuService.CreateCustomer_UI();
 menuService.GetCustomer_UI();
-menuService.DeleteCustomer();
+//menuService.DeleteCustomer();
 
 //var productService = builder.Services.GetRequiredService<ProductCatalogService>();
 //productService.CreateProduct_UI();

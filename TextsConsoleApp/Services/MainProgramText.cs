@@ -28,11 +28,20 @@ public class MainProgramText(AddressRepo addressRepo)
 
     }
 
-    //public void ListAllAddresser()
-    //{
-    //    Console.Clear();
-    //    var address = _addressRepo.Get();
-    //}
+    public void ListAllAddresser()
+    {
+        Console.Clear();
+        var addresses = _addressRepo.Get();
+        
+        Console.Write("---List of Addresses :---");
+        foreach (var address in addresses)
+          {
+              Console.WriteLine($"Address Id: {address.Id}, Street: {address.StreetAddress}, Postal Code: {address.PostalCode}");
+          }
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
+        Console.Clear();
+    }
 
 
 }

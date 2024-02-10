@@ -50,23 +50,37 @@ public class ProductServices
             throw new ArgumentNullException(nameof(productEntity), "The category entity cannot be null.");
         }
 
-        // Call the Update method of the generic repository with the category entity
 
         var updateProduct = _productRepo.Update(productEntity);
 
         return updateProduct;
     }
 
-    //public ProductsEntity UpdateProductsEntity (ProductsEntity productEntity)
-    //{
-    //    var UpdateProductEntity = _productRepo.Update(x => x.Id == productEntity.Id, productEntity);
-    //    return UpdateProductEntity;
-    //}
-
-    public void DeleteProduct(int id)
+    public bool? DeleteProduct(int id)
     {
-       _productRepo.Delete(x => x.Id == id);
+        try
+        {
+            _productRepo.Delete(x => x.Id == id);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred while deleting product: {ex.Message}");
+            return false;
+        }
     }
 
 
 }
+//public void DeleteProduct(int id)
+//{
+//   _productRepo.Delete(x => x.Id == id);
+//}
+
+
+//public ProductsEntity UpdateProductsEntity (ProductsEntity productEntity)
+//{
+//    var UpdateProductEntity = _productRepo.Update(x => x.Id == productEntity.Id, productEntity);
+//    return UpdateProductEntity;
+//}
+
