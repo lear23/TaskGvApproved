@@ -1,18 +1,16 @@
 ﻿
-using AllForApproved.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using TextInMemoryDatabase.ContextsText;
+using AllForApproved.EntitiesTest;
+
+using TestInMemoryDatabase.ContextsTest;
+
 
 namespace TextInMemoryDatabase.ServicesText
 {
-    public class CustomerServiceText
+    public class CustomerServiceTest
     {
-        private readonly DataContextsText _context;
+        private readonly DataContextsTest _context;
 
-        public CustomerServiceText(DataContextsText context)
+        public CustomerServiceTest(DataContextsTest context)
         {
             _context = context;
         }

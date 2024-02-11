@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllForApproved", "AllForApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{9BD5EAF6-9D73-451D-883D-FE2A42A00CCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextInMemoryDatabase", "TextInMemoryDatabase\TextInMemoryDatabase.csproj", "{4203BEC3-C78F-4736-A4FD-C5C9F05A25DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestInMemoryDatabase", "TextInMemoryDatabase\TestInMemoryDatabase.csproj", "{4203BEC3-C78F-4736-A4FD-C5C9F05A25DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextsConsoleApp", "TextsConsoleApp\TextsConsoleApp.csproj", "{EBBD67DE-6990-40EA-AF53-28E296A76DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextsConsoleApp", "TextsConsoleApp\TextsConsoleApp.csproj", "{EBBD67DE-6990-40EA-AF53-28E296A76DF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

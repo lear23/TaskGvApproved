@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace AllForApproved.Entities;
+namespace AllForApproved.EntitiesTest;
 
 public class ContactEntity 
 {

@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TextInMemoryDatabase\TextInMemoryDatabase.csproj" />
+    <ProjectReference Include="..\TextInMemoryDatabase\TestInMemoryDatabase.csproj" />
   </ItemGroup>
 
 </Project>

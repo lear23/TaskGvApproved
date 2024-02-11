@@ -1,11 +1,11 @@
 ﻿
 
-using AllForApproved.Entities;
+using AllForApproved.EntitiesTest;
 using TextInMemoryDatabase.RepositoriesText;
 
 namespace TextsConsoleApp.Services;
 
-public class MainProgramText(AddressRepo addressRepo)
+public class MainProgramTest(AddressRepo addressRepo)
 {
     private readonly AddressRepo _addressRepo = addressRepo;
 

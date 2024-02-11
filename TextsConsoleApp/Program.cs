@@ -2,7 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TextInMemoryDatabase.ContextsText;
+using TestInMemoryDatabase.ContextsTest;
+
 using TextInMemoryDatabase.RepositoriesText;
 using TextInMemoryDatabase.ServicesText;
 using TextsConsoleApp.Services;
@@ -10,26 +11,26 @@ using TextsConsoleApp.Services;
 var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
 {
 
-    services.AddDbContext<DataContextsText>(x => x.UseInMemoryDatabase($"{Guid.NewGuid()}"));
+    services.AddDbContext<DataContextsTest>(x => x.UseInMemoryDatabase($"{Guid.NewGuid()}"));
 
 
     services.AddScoped<AddressRepo>();
-    services.AddScoped<CustomerServiceText>();
+    services.AddScoped<CustomerServiceTest>();
 
-    services.AddSingleton<MainProgramText>();
+    services.AddSingleton<MainProgramTest>();
     services.AddSingleton<MainCustomerService>();
 
 }).Build();
 
 
-var mainProgramText = builder.Services.GetRequiredService<MainProgramText>();
-var mainCustomerText = builder.Services.GetRequiredService<MainCustomerService>();
+var mainProgramTest = builder.Services.GetRequiredService<MainProgramTest>();
+var mainCustomerTest = builder.Services.GetRequiredService<MainCustomerService>();
 
 Console.Clear();
 
-//mainProgramText.CreateAdress();
-//mainProgramText.ListAllAddresser(); 
+//mainProgramTest.CreateAdress();
+//mainProgramTest.ListAllAddresser(); 
 
-mainCustomerText.CreateCustomer();
-mainCustomerText.ListAllCustomers();
+mainCustomerTest.CreateCustomer();
+mainCustomerTest.ListAllCustomers();
 

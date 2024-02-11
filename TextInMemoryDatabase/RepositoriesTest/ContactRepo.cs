@@ -1,15 +1,16 @@
 ﻿
 
-using AllForApproved.Entities;
-using TextInMemoryDatabase.ContextsText;
+using AllForApproved.EntitiesTest;
+using TestInMemoryDatabase.ContextsTest;
+
 
 namespace TextInMemoryDatabase.RepositoriesText;
 
 public class ContactRepo
 {
-    private readonly DataContextsText _dataContexts;
+    private readonly DataContextsTest _dataContexts;
 
-    public ContactRepo(DataContextsText dataContexts)
+    public ContactRepo(DataContextsTest dataContexts)
     {
         _dataContexts = dataContexts;
     }

@@ -1,13 +1,13 @@
-﻿using AllForApproved.Entities;
+﻿using AllForApproved.EntitiesTest;
 using TextInMemoryDatabase.ServicesText;
 
 namespace TextsConsoleApp.Services
 {
     public class MainCustomerService
     {
-        private readonly CustomerServiceText _customerService;
+        private readonly CustomerServiceTest _customerService;
 
-        public MainCustomerService(CustomerServiceText customerService)
+        public MainCustomerService(CustomerServiceTest customerService)
         {
             _customerService = customerService;
         }

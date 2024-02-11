@@ -1,15 +1,16 @@
 ﻿
 
-using AllForApproved.Entities;
-using TextInMemoryDatabase.ContextsText;
+using AllForApproved.EntitiesTest;
+using TestInMemoryDatabase.ContextsTest;
+
 
 namespace TextInMemoryDatabase.RepositoriesText;
 
 public class AddressRepo
 {
-    private readonly DataContextsText _dataContexts;
+    private readonly DataContextsTest _dataContexts;
 
-    public AddressRepo(DataContextsText dataContexts)
+    public AddressRepo(DataContextsTest dataContexts)
     {
         _dataContexts = dataContexts;
     }

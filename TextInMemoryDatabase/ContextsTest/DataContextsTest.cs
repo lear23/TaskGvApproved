@@ -1,20 +1,20 @@
 ﻿
 
 
-using AllForApproved.Entities;
+using AllForApproved.EntitiesTest;
 using Microsoft.EntityFrameworkCore;
 
-namespace TextInMemoryDatabase.ContextsText;
+namespace TestInMemoryDatabase.ContextsTest;
 
-public class DataContextsText :DbContext
+public class DataContextsTest :DbContext
 {
 
-    public DataContextsText()
+    public DataContextsTest()
     {
 
     }
 
-    public DataContextsText(DbContextOptions<DataContextsText> options) : base(options) 
+    public DataContextsTest(DbContextOptions<DataContextsTest> options) : base(options) 
     {
         
     }    
